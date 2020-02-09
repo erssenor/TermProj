@@ -49,6 +49,8 @@ size_t VDIFile::vdiRead(void *buf, size_t count) {
         bytesToRead -= numRead;
       }
 
+*/
+
 
 }
 

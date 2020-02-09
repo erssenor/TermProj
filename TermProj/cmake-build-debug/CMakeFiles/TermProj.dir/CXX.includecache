@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/csis/CLionProjects/TermProject/TermProj/VDIFile.cpp
+unistd.h
+-
+VDIFile.h
+/home/csis/CLionProjects/TermProject/TermProj/VDIFile.h
+
+/home/csis/CLionProjects/TermProject/TermProj/VDIFile.h
+cstddef
+-
+cstdint
+-
+VDIheader.h
+/home/csis/CLionProjects/TermProject/TermProj/VDIheader.h
+fcntl.h
+-
+iostream
+-
+
+/home/csis/CLionProjects/TermProject/TermProj/VDIheader.h
+iostream
+-
+
+/home/csis/CLionProjects/TermProject/TermProj/main.cpp
+iostream
+-
+string
+-
+iomanip
+-
+fcntl.h
+-
+unistd.h
+-
+VDIFile.h
+/home/csis/CLionProjects/TermProject/TermProj/VDIFile.h
+VDIheader.h
+/home/csis/CLionProjects/TermProject/TermProj/VDIheader.h
+

@@ -27,7 +27,7 @@ void VDIFile::vdiClose() {
 }
 
 size_t VDIFile::vdiRead(void *buf, size_t count) {
-
+/*
     size_t bytesToRead = count;
 
     int numRead;
@@ -49,7 +49,7 @@ size_t VDIFile::vdiRead(void *buf, size_t count) {
         bytesToRead -= numRead;
       }
 
-
+*/
 }
 
 size_t VDIFile::vdiWrite(void *buf, size_t count) {  }

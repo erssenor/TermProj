@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/csis/CLionProjects/TermProj/cmake-build-debug"/>
+				<Option working_dir="/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/csis/CLionProjects/TermProj/cmake-build-debug"/>
+				<Option working_dir="/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TermProj">
-				<Option output="/home/csis/CLionProjects/TermProj/cmake-build-debug/TermProj" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/csis/CLionProjects/TermProj/cmake-build-debug"/>
+				<Option output="/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/TermProj" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -44,15 +44,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 TermProj"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 TermProj"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TermProj/fast">
-				<Option output="/home/csis/CLionProjects/TermProj/cmake-build-debug/TermProj" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/csis/CLionProjects/TermProj/cmake-build-debug"/>
+				<Option output="/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/TermProj" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -67,36 +67,36 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 TermProj/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 TermProj/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/csis/CLionProjects/TermProj/cmake-build-debug"/>
+				<Option working_dir="/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/csis/CLionProjects/TermProj/VDIFile.cpp">
+		<Unit filename="/home/csis/CLionProjects/TermProject/TermProj/VDIFile.cpp">
 			<Option target="TermProj"/>
 		</Unit>
-		<Unit filename="/home/csis/CLionProjects/TermProj/VDIFile.h">
+		<Unit filename="/home/csis/CLionProjects/TermProject/TermProj/VDIFile.h">
 			<Option target="TermProj"/>
 		</Unit>
-		<Unit filename="/home/csis/CLionProjects/TermProj/VDIheader.h">
+		<Unit filename="/home/csis/CLionProjects/TermProject/TermProj/VDIheader.h">
 			<Option target="TermProj"/>
 		</Unit>
-		<Unit filename="/home/csis/CLionProjects/TermProj/main.cpp">
+		<Unit filename="/home/csis/CLionProjects/TermProject/TermProj/main.cpp">
 			<Option target="TermProj"/>
 		</Unit>
-		<Unit filename="/home/csis/CLionProjects/TermProj/CMakeLists.txt">
+		<Unit filename="/home/csis/CLionProjects/TermProject/TermProj/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

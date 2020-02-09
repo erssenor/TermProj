@@ -43,10 +43,10 @@ RM = /home/csis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/c
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/csis/CLionProjects/TermProj
+CMAKE_SOURCE_DIR = /home/csis/CLionProjects/TermProject/TermProj
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/csis/CLionProjects/TermProj/cmake-build-debug
+CMAKE_BINARY_DIR = /home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/TermProj.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/TermProj.dir/flags.make
 
 CMakeFiles/TermProj.dir/main.cpp.o: CMakeFiles/TermProj.dir/flags.make
 CMakeFiles/TermProj.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/csis/CLionProjects/TermProj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TermProj.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TermProj.dir/main.cpp.o -c /home/csis/CLionProjects/TermProj/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TermProj.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TermProj.dir/main.cpp.o -c /home/csis/CLionProjects/TermProject/TermProj/main.cpp
 
 CMakeFiles/TermProj.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TermProj.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/csis/CLionProjects/TermProj/main.cpp > CMakeFiles/TermProj.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/csis/CLionProjects/TermProject/TermProj/main.cpp > CMakeFiles/TermProj.dir/main.cpp.i
 
 CMakeFiles/TermProj.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TermProj.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csis/CLionProjects/TermProj/main.cpp -o CMakeFiles/TermProj.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csis/CLionProjects/TermProject/TermProj/main.cpp -o CMakeFiles/TermProj.dir/main.cpp.s
 
 CMakeFiles/TermProj.dir/VDIFile.cpp.o: CMakeFiles/TermProj.dir/flags.make
 CMakeFiles/TermProj.dir/VDIFile.cpp.o: ../VDIFile.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/csis/CLionProjects/TermProj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TermProj.dir/VDIFile.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TermProj.dir/VDIFile.cpp.o -c /home/csis/CLionProjects/TermProj/VDIFile.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TermProj.dir/VDIFile.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TermProj.dir/VDIFile.cpp.o -c /home/csis/CLionProjects/TermProject/TermProj/VDIFile.cpp
 
 CMakeFiles/TermProj.dir/VDIFile.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TermProj.dir/VDIFile.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/csis/CLionProjects/TermProj/VDIFile.cpp > CMakeFiles/TermProj.dir/VDIFile.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/csis/CLionProjects/TermProject/TermProj/VDIFile.cpp > CMakeFiles/TermProj.dir/VDIFile.cpp.i
 
 CMakeFiles/TermProj.dir/VDIFile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TermProj.dir/VDIFile.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csis/CLionProjects/TermProj/VDIFile.cpp -o CMakeFiles/TermProj.dir/VDIFile.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csis/CLionProjects/TermProject/TermProj/VDIFile.cpp -o CMakeFiles/TermProj.dir/VDIFile.cpp.s
 
 # Object files for target TermProj
 TermProj_OBJECTS = \
@@ -95,7 +95,7 @@ TermProj: CMakeFiles/TermProj.dir/main.cpp.o
 TermProj: CMakeFiles/TermProj.dir/VDIFile.cpp.o
 TermProj: CMakeFiles/TermProj.dir/build.make
 TermProj: CMakeFiles/TermProj.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/csis/CLionProjects/TermProj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable TermProj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable TermProj"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TermProj.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/TermProj.dir/clean:
 .PHONY : CMakeFiles/TermProj.dir/clean
 
 CMakeFiles/TermProj.dir/depend:
-	cd /home/csis/CLionProjects/TermProj/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/csis/CLionProjects/TermProj /home/csis/CLionProjects/TermProj /home/csis/CLionProjects/TermProj/cmake-build-debug /home/csis/CLionProjects/TermProj/cmake-build-debug /home/csis/CLionProjects/TermProj/cmake-build-debug/CMakeFiles/TermProj.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/csis/CLionProjects/TermProject/TermProj /home/csis/CLionProjects/TermProject/TermProj /home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug /home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug /home/csis/CLionProjects/TermProject/TermProj/cmake-build-debug/CMakeFiles/TermProj.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/TermProj.dir/depend
 

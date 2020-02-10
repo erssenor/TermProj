@@ -27,29 +27,34 @@ void VDIFile::vdiClose() {
 }
 
 size_t VDIFile::vdiRead(void *buf, size_t count) {
-/*
+
     size_t bytesToRead = count;
 
     int numRead;
+    int totalRead = 0;
 
     //keeps track where we are in buffer
     int curLoc = 0;
 
     long long int transCur;
 
-    uint16_t offset;
+    uint16_t offset = 0;
 
     while(bytesToRead > 0) {
-    //translate cursor
+        //translate cursor
 
         lseek(fd, transCur + header->offData, SEEK_SET);
         numRead = read(fd, buf, header->cbBlock);
-        offset += numRead;
-        curLoc += numRead;
-        bytesToRead -= numRead;
-      }
 
-*/
+        offset += numRead;
+        totalRead += numRead;
+        curLoc += numRead;
+        
+        bytesToRead -= numRead;
+    }
+
+    return totalRead;
+
 
 }
 

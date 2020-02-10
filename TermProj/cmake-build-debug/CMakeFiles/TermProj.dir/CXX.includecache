@@ -28,3 +28,19 @@ iostream
 iostream
 -
 
+/home/csis/CLionProjects/TermProject/TermProj/main.cpp
+iostream
+-
+string
+-
+iomanip
+-
+fcntl.h
+-
+unistd.h
+-
+VDIFile.h
+/home/csis/CLionProjects/TermProject/TermProj/VDIFile.h
+VDIheader.h
+/home/csis/CLionProjects/TermProject/TermProj/VDIheader.h
+

@@ -167,7 +167,6 @@ void dumpHeader(VDIFile vdi) {
 
     cout << "Disk Size: " << setw(16) << setfill('0') << vdi.header->cbBlock << endl;
 
-    cout << "Disk Size: " << setw(16) << setfill('0') << vdi.header->cBlocksAllocated << endl;
 
 
 }

@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include "VDIFile.h"
 #include "VDIheader.h"
+#include "Partition.h"
 
 using namespace std;
 
@@ -13,13 +14,15 @@ void displayBuf(uint8_t *buf, uint32_t count, uint64_t offset);
 //void displayBufPage(uint8_t *buf, uint32_t count, uint32_t start, uint64_t offset);
 //void displayBuf(uint8_t *buf, uint32_t count, uint64_t offset);
 void dumpHeader(VDIFile vdi);
+void displayPart(partEntry p[]);
+void combine(VDIFile vdi, partEntry p[]);
 
 int main() {
     uint8_t *buf;
 
     int fd;
     long fsize;
-    char *fileName = reinterpret_cast<char *>('/home/csis/Documents/Operating Systems/Test-fixed-1k.vdi');
+    //char *fileName = reinterpret_cast<char *>('/home/csis/Documents/Operating Systems/Test-fixed-1k.vdi');
     //char *fn = fileName;
     VDIFile vdi;
     cout << "What is the file name. " << endl;
@@ -30,39 +33,28 @@ int main() {
         cout << "File not found";
         return 0;
     };
-    dumpHeader(vdi);
 
-    fd = open("/home/csis/Documents/Operating Systems/Test-fixed-1k.vdi", O_RDONLY);
-    if(fd == -1) {
-        cout << "File not found" << endl;
-        return 0;
-    }
+    partTable pTable;
+    partEntry pEntry[4];
 
-    //get size of the file to allocate space for the buffer.
-//    fsize = lseek(fd, 0, SEEK_END);
-    fsize = 400;
-    //exmaple 1
-    lseek(fd, 0, SEEK_SET);
-    //example 2
-    //lseek(fd, 1048576, SEEK_SET);
-    //lseek(fd, 2*1048576, SEEK_SET);
-    //example 3
-    //lseek(fd, 2*1048576+446, SEEK_SET);
-    buf = new uint8_t [fsize];
-    //read into the buffer
-    read(fd, buf, fsize);
+    combine(vdi, pEntry);
+
+    pTable.partOpen(vdi, pEntry);
+
+    displayPart(pTable.tableEntries);
+
+    //dumpHeader(vdi);
+
+    cout << vdi.header->cbDisk << endl;
+    buf = new uint8_t [1024];
+    vdi.vdiSeek(pTable.tableEntries[0].firstSector * 512 + 1024, SEEK_SET);
+    vdi.vdiRead(buf, 1024);
+    cout << "Read complete" << endl;
+    displayBuf(buf,1024,1024);
 
 
 
-    //display the buffer
-    //example 1 and 2
-    displayBuf(buf, 400, 0);
-
-
-    //example 2 and 3
-    //displayBufPage(buf, 400, 190, 256);
     vdi.vdiClose();
-    close(fd);
 
 
     return 0;
@@ -137,7 +129,6 @@ void displayBufPage(uint8_t *buf, uint32_t count, uint32_t start, uint64_t offse
 
 }
 
-
 void dumpHeader(VDIFile vdi) {
     cout << "Image Name : ";
     for(int i = 0; i < 64; i++) {
@@ -157,17 +148,54 @@ void dumpHeader(VDIFile vdi) {
 
     cout << "Flags: " << setw(8) << setfill('0') << vdi.header->fFlags << endl;
 
+    cout << "Sector Size: " << setw(8) << setfill('0') << vdi.header->sectorSize << endl;
+
     cout << "Map offset: " << setw(8) << setfill('0') << vdi.header->offBlocks << endl;
 
     cout << "Frame offset: " << setw(8) << setfill('0') << vdi.header->offData << endl;
 
-    cout << "Frame Size: " << setw(8) << setfill('0') << vdi.header->cBlocks << endl;
+    cout << "Frame Size: " << setw(8) << setfill('0') << vdi.header->cbBlock << endl;
 
-    cout << "Total frames: " << setw(8) << setfill('0') << vdi.header->cbDisk << endl;
+    cout << "Total frames: " << setw(8) << setfill('0') << vdi.header->cBlocks << endl;
 
-    cout << "Disk Size: " << setw(16) << setfill('0') << vdi.header->cbBlock << endl;
+    cout << "Frames Allocated: " << setw(8) << setfill('0') << vdi.header->cBlocksAllocated << endl;
+
+    cout << "Disk Size: " << setw(16) << setfill('0') << vdi.header->cbDisk << endl;
 
 
 
+}
+
+void displayPart(partEntry p[]) {
+    for(int i = 0; i < 4; i++) {
+        cout << "Partition " << i+1 << endl;
+        cout << "Status: " << hex <<(int)p[i].status << endl;
+        cout << "First Sector CHS: ";
+        for(int j = 0; j < 3; j++) {
+            cout << (int)p[i].chsFirst[j];
+        }
+        cout << endl;
+        cout << "Last Sector CHS: ";
+        for(int j = 0; j < 3; j++) {
+            cout  << (int)p[i].chsLast[j];
+        }
+        cout << endl;
+        cout << "Partition Type: " << hex << (int)p[i].type << endl;
+        cout << "First LBA Sector: " << p[i].firstSector << endl;
+        cout << "Number of Sectors: " << p[i].nSectors << endl;
+        cout << endl;
+
+
+    }
+}
+
+void combine(VDIFile vdi, partEntry p[]) {
+    //cout << (int)p[0].nSectors << endl;
+
+    vdi.vdiSeek(446, SEEK_SET);
+    cout << vdi.cursor << endl;
+    vdi.vdiRead( p, 64);
+
+    //cout << (int)p[0].nSectors << endl;
 }
 

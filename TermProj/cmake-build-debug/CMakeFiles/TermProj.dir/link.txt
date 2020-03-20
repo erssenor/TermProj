@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/TermProj.dir/main.cpp.o CMakeFiles/TermProj.dir/VDIFile.cpp.o  -o TermProj 
+/usr/bin/c++  -g   CMakeFiles/TermProj.dir/main.cpp.o CMakeFiles/TermProj.dir/VDIFile.cpp.o CMakeFiles/TermProj.dir/Partition.cpp.o CMakeFiles/TermProj.dir/ext2.cpp.o  -o TermProj 

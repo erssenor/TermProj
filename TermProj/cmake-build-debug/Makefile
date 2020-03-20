@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/csis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/csis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6494.38/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/csis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/csis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6494.38/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/csis/CLionProjects/TermProject/TermProj/cmake-build-deb
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/csis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/csis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6494.38/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/csis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/csis/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6494.38/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -123,6 +123,33 @@ TermProj/fast:
 	$(MAKE) -f CMakeFiles/TermProj.dir/build.make CMakeFiles/TermProj.dir/build
 .PHONY : TermProj/fast
 
+Partition.o: Partition.cpp.o
+
+.PHONY : Partition.o
+
+# target to build an object file
+Partition.cpp.o:
+	$(MAKE) -f CMakeFiles/TermProj.dir/build.make CMakeFiles/TermProj.dir/Partition.cpp.o
+.PHONY : Partition.cpp.o
+
+Partition.i: Partition.cpp.i
+
+.PHONY : Partition.i
+
+# target to preprocess a source file
+Partition.cpp.i:
+	$(MAKE) -f CMakeFiles/TermProj.dir/build.make CMakeFiles/TermProj.dir/Partition.cpp.i
+.PHONY : Partition.cpp.i
+
+Partition.s: Partition.cpp.s
+
+.PHONY : Partition.s
+
+# target to generate assembly for a file
+Partition.cpp.s:
+	$(MAKE) -f CMakeFiles/TermProj.dir/build.make CMakeFiles/TermProj.dir/Partition.cpp.s
+.PHONY : Partition.cpp.s
+
 VDIFile.o: VDIFile.cpp.o
 
 .PHONY : VDIFile.o
@@ -149,6 +176,33 @@ VDIFile.s: VDIFile.cpp.s
 VDIFile.cpp.s:
 	$(MAKE) -f CMakeFiles/TermProj.dir/build.make CMakeFiles/TermProj.dir/VDIFile.cpp.s
 .PHONY : VDIFile.cpp.s
+
+ext2.o: ext2.cpp.o
+
+.PHONY : ext2.o
+
+# target to build an object file
+ext2.cpp.o:
+	$(MAKE) -f CMakeFiles/TermProj.dir/build.make CMakeFiles/TermProj.dir/ext2.cpp.o
+.PHONY : ext2.cpp.o
+
+ext2.i: ext2.cpp.i
+
+.PHONY : ext2.i
+
+# target to preprocess a source file
+ext2.cpp.i:
+	$(MAKE) -f CMakeFiles/TermProj.dir/build.make CMakeFiles/TermProj.dir/ext2.cpp.i
+.PHONY : ext2.cpp.i
+
+ext2.s: ext2.cpp.s
+
+.PHONY : ext2.s
+
+# target to generate assembly for a file
+ext2.cpp.s:
+	$(MAKE) -f CMakeFiles/TermProj.dir/build.make CMakeFiles/TermProj.dir/ext2.cpp.s
+.PHONY : ext2.cpp.s
 
 main.o: main.cpp.o
 
@@ -186,9 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... TermProj"
 	@echo "... edit_cache"
+	@echo "... Partition.o"
+	@echo "... Partition.i"
+	@echo "... Partition.s"
 	@echo "... VDIFile.o"
 	@echo "... VDIFile.i"
 	@echo "... VDIFile.s"
+	@echo "... ext2.o"
+	@echo "... ext2.i"
+	@echo "... ext2.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

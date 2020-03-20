@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/csis/CLionProjects/TermProject/TermProj/Partition.cpp">
+			<Option target="TermProj"/>
+		</Unit>
+		<Unit filename="/home/csis/CLionProjects/TermProject/TermProj/Partition.h">
+			<Option target="TermProj"/>
+		</Unit>
 		<Unit filename="/home/csis/CLionProjects/TermProject/TermProj/VDIFile.cpp">
 			<Option target="TermProj"/>
 		</Unit>
@@ -91,6 +97,12 @@
 			<Option target="TermProj"/>
 		</Unit>
 		<Unit filename="/home/csis/CLionProjects/TermProject/TermProj/VDIheader.h">
+			<Option target="TermProj"/>
+		</Unit>
+		<Unit filename="/home/csis/CLionProjects/TermProject/TermProj/ext2.cpp">
+			<Option target="TermProj"/>
+		</Unit>
+		<Unit filename="/home/csis/CLionProjects/TermProject/TermProj/ext2.h">
 			<Option target="TermProj"/>
 		</Unit>
 		<Unit filename="/home/csis/CLionProjects/TermProject/TermProj/main.cpp">

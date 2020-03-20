@@ -6,8 +6,8 @@
 
 #IncludeRegexTransform: 
 
-/home/csis/CLionProjects/TermProject/TermProj/VDIFile.cpp
-unistd.h
+/home/csis/CLionProjects/TermProject/TermProj/Partition.h
+cstdint
 -
 VDIFile.h
 /home/csis/CLionProjects/TermProject/TermProj/VDIFile.h
@@ -23,24 +23,20 @@ fcntl.h
 -
 iostream
 -
+cstring
+-
 
 /home/csis/CLionProjects/TermProject/TermProj/VDIheader.h
 iostream
 -
 
-/home/csis/CLionProjects/TermProject/TermProj/main.cpp
-iostream
--
-string
--
-iomanip
--
-fcntl.h
--
-unistd.h
--
+/home/csis/CLionProjects/TermProject/TermProj/ext2.cpp
+ext2.h
+/home/csis/CLionProjects/TermProject/TermProj/ext2.h
+
+/home/csis/CLionProjects/TermProject/TermProj/ext2.h
 VDIFile.h
 /home/csis/CLionProjects/TermProject/TermProj/VDIFile.h
-VDIheader.h
-/home/csis/CLionProjects/TermProject/TermProj/VDIheader.h
+Partition.h
+/home/csis/CLionProjects/TermProject/TermProj/Partition.h
 

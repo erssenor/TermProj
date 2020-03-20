@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/TermProj.dir/Partition.cpp.o"
   "CMakeFiles/TermProj.dir/VDIFile.cpp.o"
+  "CMakeFiles/TermProj.dir/ext2.cpp.o"
   "CMakeFiles/TermProj.dir/main.cpp.o"
   "TermProj"
   "TermProj.pdb"

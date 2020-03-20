@@ -43,6 +43,12 @@ struct vdiHeader {
     uint32_t        offData;
     /** Legacy image geometry (previous code stored PCHS there). */
     uint32_t LegacyGeometry;
+
+    uint32_t heads;
+
+    uint32_t sectors;
+
+    uint32_t sectorSize;
     /** Was BIOS HDD translation mode, now unused. */
     uint32_t        u32Dummy;
     /** Size of disk (in bytes). */

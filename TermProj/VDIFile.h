@@ -11,6 +11,7 @@
 #include "VDIheader.h"
 #include <fcntl.h>
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 

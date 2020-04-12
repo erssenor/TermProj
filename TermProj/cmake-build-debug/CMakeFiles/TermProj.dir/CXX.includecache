@@ -30,15 +30,15 @@ cstring
 iostream
 -
 
-/home/csis/CLionProjects/TermProject/TermProj/ext2.cpp
-ext2.h
-/home/csis/CLionProjects/TermProject/TermProj/ext2.h
-
 /home/csis/CLionProjects/TermProject/TermProj/ext2.h
 VDIFile.h
 /home/csis/CLionProjects/TermProject/TermProj/VDIFile.h
 Partition.h
 /home/csis/CLionProjects/TermProject/TermProj/Partition.h
+iomanip
+-
+cmath
+-
 
 /home/csis/CLionProjects/TermProject/TermProj/main.cpp
 iostream
@@ -57,4 +57,6 @@ VDIheader.h
 /home/csis/CLionProjects/TermProject/TermProj/VDIheader.h
 Partition.h
 /home/csis/CLionProjects/TermProject/TermProj/Partition.h
+ext2.h
+/home/csis/CLionProjects/TermProject/TermProj/ext2.h
 

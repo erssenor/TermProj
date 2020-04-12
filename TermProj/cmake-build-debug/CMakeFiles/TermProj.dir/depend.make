@@ -19,5 +19,6 @@ CMakeFiles/TermProj.dir/ext2.cpp.o: ../ext2.h
 CMakeFiles/TermProj.dir/main.cpp.o: ../Partition.h
 CMakeFiles/TermProj.dir/main.cpp.o: ../VDIFile.h
 CMakeFiles/TermProj.dir/main.cpp.o: ../VDIheader.h
+CMakeFiles/TermProj.dir/main.cpp.o: ../ext2.h
 CMakeFiles/TermProj.dir/main.cpp.o: ../main.cpp
 

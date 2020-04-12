@@ -6,12 +6,15 @@
 #define TERMPROJ_EXT2_H
 #include "VDIFile.h"
 #include "Partition.h"
+#include <iomanip>
+#include <cmath>
 
 struct superBlock{
     uint32_t
       s_inodes_count,
       s_blocks_count,
       s_r_blocks_count,
+      s_free_block_count,
       s_free_inodes_count,
       s_first_data_block,
       s_log_block_size,
@@ -81,6 +84,9 @@ struct superBlock{
       s_default_mount_options,
       s_first_meta_bg;
 
+    uint32_t
+        s_reserved[190];
+
 };
 
 struct blockGDT{
@@ -99,17 +105,21 @@ struct blockGDT{
     uint8_t
       bg_reserved[12];
 
+
+
 };
 
 class ext2File {
 public:
-    VDIFile vdi;
     partTable pTable;
 
-    superBlock sb;
-    blockGDT bGDT;
+    superBlock *sb;
+    blockGDT *bGDT;
 
-    void ext2Open(char *fn, uint32_t pnum);
+    uint32_t blockSize;
+    uint16_t numGroup;
+
+    bool ext2Open(VDIFile vdi, uint32_t pnum, partEntry p[]);
 
     void ext2Close();
 
@@ -117,13 +127,13 @@ public:
 
     uint32_t writeBlock(uint32_t blockNum, void *buf);
 
-    uint32_t fetchSuperBlock(uint32_t blockNum, superBlock *sb);
+    uint32_t fetchSuperBlock(uint32_t blockNum, superBlock *super);
 
-    uint32_t writeSuperBlock(uint32_t blockNum, superBlock *sb);
+    uint32_t writeSuperBlock(uint32_t blockNum, superBlock *super);
 
-    uint32_t fetchBGDT(uint32_t blockNum, blockGDT *bgdt);
+    uint32_t fetchBGDT(uint32_t blockNum, blockGDT *blkgdt);
 
-    uint32_t writeBGDT(uint32_t blockNum, blockGDT *bgdt);
+    uint32_t writeBGDT(uint32_t blockNum, blockGDT *blkgdt);
 
 
 

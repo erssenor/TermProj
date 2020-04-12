@@ -21,11 +21,11 @@ struct partEntry {
 class partTable {
 public:
     VDIFile vdi;
-    uint16_t pStart;
-    uint16_t pSize;
+    uint32_t pStart;
+    uint32_t pSize;
     partEntry *tableEntries;
 
-    void partOpen(VDIFile, partEntry[]);
+    void partOpen(VDIFile f, partEntry p[]);
 
     void partClose();
 

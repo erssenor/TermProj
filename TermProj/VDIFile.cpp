@@ -28,6 +28,7 @@ bool VDIFile::vdiOpen() {
 
 void VDIFile::vdiClose() {
     close(fd);
+    delete header;
 }
 
 size_t VDIFile::vdiRead(void *buf, size_t count) {
@@ -48,7 +49,7 @@ size_t VDIFile::vdiRead(void *buf, size_t count) {
     }
 
     while(bytesToRead > 0) {
-        cout << "bytes to read " << bytesToRead << endl;
+        //cout << "bytes to read " << bytesToRead << endl;
         vpage = cursor/header->cbBlock;
         offset = cursor % header->cbBlock;
         bytesInPage = header->cbBlock - offset;

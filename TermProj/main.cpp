@@ -6,22 +6,22 @@
 #include "VDIFile.h"
 #include "VDIheader.h"
 #include "Partition.h"
+#include "ext2.h"
 
 using namespace std;
 
 void displayBufPage(uint8_t *buf, uint32_t count, uint32_t start, uint64_t offset);
 void displayBuf(uint8_t *buf, uint32_t count, uint64_t offset);
-//void displayBufPage(uint8_t *buf, uint32_t count, uint32_t start, uint64_t offset);
-//void displayBuf(uint8_t *buf, uint32_t count, uint64_t offset);
 void dumpHeader(VDIFile vdi);
 void displayPart(partEntry p[]);
 void combine(VDIFile vdi, partEntry p[]);
+void checkExt(ext2File ext);
 
 int main() {
     uint8_t *buf;
 
-    int fd;
-    long fsize;
+    //int fd;
+    //long fsize;
     //char *fileName = reinterpret_cast<char *>('/home/csis/Documents/Operating Systems/Test-fixed-1k.vdi');
     //char *fn = fileName;
     VDIFile vdi;
@@ -34,27 +34,37 @@ int main() {
         return 0;
     };
 
-    partTable pTable;
+    //partTable pTable;
     partEntry pEntry[4];
 
     combine(vdi, pEntry);
 
-    pTable.partOpen(vdi, pEntry);
+    //pTable.partOpen(vdi, pEntry);
+    ext2File ext;
+    if(!ext.ext2Open(vdi, 1, pEntry))
+        return 0;
 
-    displayPart(pTable.tableEntries);
+    checkExt(ext);
+    blockGDT *blkgdt = new blockGDT[ext.numGroup];
+
+    if(ext.fetchBGDT(8194, blkgdt)){
+        cout << "fetch bgdt failed" << endl;
+        return 0;
+    }
+    cout << endl << blkgdt[0].bg_inode_bitmap << endl;
+    buf = new uint8_t [ext.blockSize];
+
+    if(ext.fetchBlock(1, buf)){
+        cout << "Fetch Failed" << endl;
+        return 0;
+    }
+    displayBuf(buf, 1024, 0);
 
     //dumpHeader(vdi);
 
-    cout << vdi.header->cbDisk << endl;
-    buf = new uint8_t [1024];
-    vdi.vdiSeek(pTable.tableEntries[0].firstSector * 512 + 1024, SEEK_SET);
-    vdi.vdiRead(buf, 1024);
-    cout << "Read complete" << endl;
-    displayBuf(buf,1024,1024);
-
-
 
     vdi.vdiClose();
+    ext.ext2Close();
 
 
     return 0;
@@ -193,9 +203,35 @@ void combine(VDIFile vdi, partEntry p[]) {
     //cout << (int)p[0].nSectors << endl;
 
     vdi.vdiSeek(446, SEEK_SET);
-    cout << vdi.cursor << endl;
+    //cout << vdi.cursor << endl;
     vdi.vdiRead( p, 64);
 
     //cout << (int)p[0].nSectors << endl;
+}
+
+void checkExt(ext2File ext) {
+    cout << endl << "superblock contents: " << endl;
+    cout << "Num of Inodes: " << ext.sb->s_inodes_count << endl;
+    cout << "Num of blocks: " << ext.sb->s_blocks_count << endl;
+    cout << "Num of free blocks: " << ext.sb->s_free_block_count << endl;
+    cout << "Num of free inodes: " << ext.sb->s_free_inodes_count << endl;
+    cout << "First data block: " << ext.sb->s_first_data_block << endl;
+    cout << "Log block size: " << ext.sb->s_log_block_size << endl;
+    cout << "Log frag size: " << ext.sb->s_log_frag_size << endl;
+    cout << "Blocks per group: " << ext.sb->s_blocks_per_group << endl;
+    cout << "Frags per group: " << ext.sb->s_frags_per_group << endl;
+    cout << "Inodes per group: " << ext.sb->s_inodes_per_group << endl;
+
+    cout << "Block GDT:" << endl;
+    cout << setw(10) << left << "Block" << setw(10) << "Block" << setw(10) << "Inode" <<setw(10) << "Inode";
+    cout << setw(10) << left << "Free" << setw(10) << "Free" << setw(10) << "Used" << endl;
+    cout << setw(10) << left << "Number" << setw(10) << "Bitmap" << setw(10) << "Bitmap";
+    cout << setw(10) << left << "Table" << setw(10) << "Blocks" << setw(10) << "Inodes" << setw(10) << "Dirs" << endl;
+    cout << endl;
+    for(int i = 0; i < ext.numGroup; i++) {
+        cout << setw(10) << left << i << setw(10) << ext.bGDT[i].bg_block_bitmap << setw(10) << ext.bGDT[i].bg_inode_bitmap;
+        cout << setw(10) << left << ext.bGDT[i].bg_inode_table <<setw(10) << ext.bGDT[i].bg_free_blocks_count <<setw(10) << ext.bGDT[i].bg_free_inodes_count;
+        cout << setw(10) << left << ext.bGDT[i].bg_used_dirs_count << endl;
+    }
 }
 

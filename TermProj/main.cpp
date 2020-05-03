@@ -7,6 +7,7 @@
 #include "VDIheader.h"
 #include "Partition.h"
 #include "ext2.h"
+#include "dir.h"
 
 using namespace std;
 
@@ -26,7 +27,7 @@ int main() {
     //char *fn = fileName;
     VDIFile vdi;
     cout << "What is the file name. " << endl;
-    //cin >> fileName;
+    //getfile name
 
     //open the file
     if(!vdi.vdiOpen()) {

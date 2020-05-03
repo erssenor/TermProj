@@ -186,3 +186,176 @@ uint32_t ext2File::writeBGDT(uint32_t blockNum, blockGDT *blkgdt){
     }
     
 }
+
+uint32_t ext2File::fetchBlockFromFile(inode *i, uint32_t bNum, void *buf) {
+    uint32_t *blockList = new uint32_t[sb->s_blocks_count];
+    uint32_t k = blockSize / 4;
+    int index;
+    if(bNum < 12) {
+        blockList = i->i_block;
+        goto direct;
+    }
+    else if(bNum < 12 + k) {
+        if(i->i_block[12] == 0) {
+            return false;
+        }
+        fetchBlock(i->i_block[12], buf);
+
+        blockList = static_cast<uint32_t *>(buf);
+        bNum -= 12;
+
+        goto direct;
+    }
+    else if(bNum < 12 + k + (k * k)) {
+        if(i->i_block[13] == 0) {
+            return false;
+        }
+        fetchBlock(i->i_block[13], buf);
+
+        blockList = static_cast<uint32_t *>(buf);
+        bNum = bNum - 12 - k;
+
+        goto single;
+    }
+    else {
+        if(i->i_block[14] == 0) {
+            return false;
+        }
+
+        fetchBlock(i->i_block[14], buf);
+
+        blockList = static_cast<uint32_t *>(buf);
+        bNum = bNum - 12 - k - k * k;
+    }
+
+    index = bNum / (k * k);
+    bNum = bNum % (k * k);
+
+    if(blockList[index] == 0) {
+        return false;
+    }
+    fetchBlock(blockList[index], buf);
+    blockList = static_cast<uint32_t *>(buf);
+
+    single:
+    {
+
+        int j = bNum / k;
+        bNum = bNum % k;
+
+        if (blockList[j] == 0) {
+            return false;
+        }
+        fetchBlock(blockList[j], buf);
+        blockList = static_cast<uint32_t *>(buf);
+    };
+    direct:
+    {
+        if (blockList[bNum] == 0) {
+            return false;
+        }
+        fetchBlock(blockList[bNum], buf);
+    };
+    return true;
+
+}
+
+void ext2File::writeBlockFromFile(inode *i, uint32_t bNum, void *buf, uint32_t iNum) {
+    uint32_t *blockList = new uint32_t[sb->s_blocks_count];
+
+    uint32_t k = blockSize / 4;
+
+    void *temp = new uint8_t [blockSize];
+
+    uint32_t ibNum;
+
+    int index;
+
+    if(bNum < 12) {
+        if(i->i_block[bNum] == 0) {
+            //allocate i.i_block[bNum]
+            //writeInode(iNum, i)
+        }
+        blockList = i->i_block;
+        goto direct;
+    }
+    else if(bNum < 12 + k) {
+        if(i->i_block[12] == 0) {
+            //allocate i.iblock[12]
+            //writeInode
+        }
+        fetchBlock(i->i_block[12], temp);
+        ibNum = i->i_block[12];
+        blockList = static_cast<uint32_t *>(temp);
+        bNum -= 12;
+
+        goto direct;
+    }
+    else if(bNum < 12 + k + k * k) {
+        if(i->i_block[13] == 0) {
+            //allocate iblock[13]
+            //writeInode
+        }
+        fetchBlock(i->i_block[13], temp);
+
+        ibNum = i->i_block[13];
+        blockList = static_cast<uint32_t *>(temp);
+
+        bNum = bNum - 12 - k;
+
+        goto single;
+    }
+    else {
+        if(i->i_block[14] == 0) {
+            //allocate
+            //writeInode
+        }
+        fetchBlock(i->i_block[14], temp);
+
+        ibNum = i->i_block[14];
+        blockList = static_cast<uint32_t *>(temp);
+        bNum = bNum - 12 - k - k * k;
+    }
+
+    index = bNum / (k * k);
+    bNum = bNum % (k * k);
+
+    if(blockList[index] == 0) {
+        //blockList[index] allocate
+        writeBlock(ibNum, blockList);
+    }
+
+    ibNum = blockList[index];
+    fetchBlock(blockList[index], temp);
+    blockList = static_cast<uint32_t *>(temp);
+
+    single:
+    {
+        index = bNum / k;
+        bNum = bNum % k;
+
+        if(blockList[index] == 0) {
+            //allocate blockList[index]
+            writeBlock(ibNum, blockList);
+        }
+        ibNum = blockList[index];
+        fetchBlock(blockList[index], temp);
+        blockList = static_cast<uint32_t *>(temp);
+    };
+
+    direct:
+    {
+        if(blockList[bNum] == 0) {
+            //allocate blockList[bNum]
+            writeBlock(ibNum, blockList);
+        }
+        writeBlock(blockList[bNum], buf);
+    };
+
+}
+
+uint32_t allocate();
+
+uint32_t fetchInode(ext2File *f, uint32_t iNum, inode *buf) {
+    return 0;
+}

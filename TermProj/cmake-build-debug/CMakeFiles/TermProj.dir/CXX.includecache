@@ -30,6 +30,16 @@ cstring
 iostream
 -
 
+/home/csis/CLionProjects/TermProject/TermProj/dir.h
+cstdint
+-
+ext2.h
+/home/csis/CLionProjects/TermProject/TermProj/ext2.h
+
+/home/csis/CLionProjects/TermProject/TermProj/ext2.cpp
+ext2.h
+/home/csis/CLionProjects/TermProject/TermProj/ext2.h
+
 /home/csis/CLionProjects/TermProject/TermProj/ext2.h
 VDIFile.h
 /home/csis/CLionProjects/TermProject/TermProj/VDIFile.h
@@ -59,4 +69,6 @@ Partition.h
 /home/csis/CLionProjects/TermProject/TermProj/Partition.h
 ext2.h
 /home/csis/CLionProjects/TermProject/TermProj/ext2.h
+dir.h
+/home/csis/CLionProjects/TermProject/TermProj/dir.h
 

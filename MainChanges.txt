@@ -1,0 +1,44 @@
+
+	Inode *buffer;
+	inodeFile iFile;
+	    
+	iFile.fetchInode(ext, 2, buffer);
+	     displayInode(*buffer, 2);
+
+	iFile.fetchInode(ext, 11, buffer);
+	     displayInode(*buffer, 11);
+
+
+
+copy the above into the main function to call the inode functions
+
+
+The following is the function to add into main.cpp to display the inodes
+
+
+
+void displayInode(Inode buf, int iNum) {
+    cout << "Inode " << iNum << endl;
+    //displayBuf(buf, 1024, 0);
+    cout << "Mode: " << buf.i_mode << endl;
+    cout << "Size: " << buf.i_size << endl;
+    cout << "Blocks: " << buf.i_blocks << endl;
+    cout << "UID / GID: " << buf.i_uid << " / " << buf.i_gid << endl;
+    cout << "Links: " << buf.i_links_count<< endl;
+    cout << "Created: " << buf.i_ctime << endl;
+    cout << "Last access: " << buf.i_atime << endl;
+    cout << "Last modification: " << buf.i_mtime << endl;
+    cout << "Deleted: " << buf.i_dtime << endl;
+    cout << "Flags: " << buf.i_flags << endl;
+    cout << "File Version: " << buf.i_generation << endl;
+    cout << "ACL block: " << buf.i_file_acl << endl;
+    cout << "Direct blocks: " << endl << "0-3:"<< '\t' << buf.i_block[0] << '\t' <<
+            buf.i_block[1] << '\t' << buf.i_block[2] << '\t' <<buf.i_block[3] << '\n';
+    cout << "Direct blocks: " << endl << "4-7:"<< '\t' << buf.i_block[4] << '\t' <<
+            buf.i_block[5] << '\t' << buf.i_block[6] << '\t' <<buf.i_block[7] << '\n';
+    cout << "Direct blocks: " << endl << "8-11:"<< '\t' << buf.i_block[8] << '\t' <<
+            buf.i_block[9] << '\t' << buf.i_block[10] << '\t' <<buf.i_block[11] << '\n';
+    cout << "Single indirect block: " << buf.i_block[12];
+    cout << "Single indirect block: " << buf.i_block[13];
+    cout << "Single indirect block: " << buf.i_block[14];
+}
